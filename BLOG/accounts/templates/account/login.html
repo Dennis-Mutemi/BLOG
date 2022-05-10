@@ -1,0 +1,20 @@
+{% extends 'base_file.html' %}
+
+{%block content%}
+<div class="container" style="width:35%;margin-top: 2em;">
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">LOGIN</h5>   
+    <p class="card-text">
+    <form action="{%url 'accounts:login' %}" method="post"">
+      {%csrf_token%}
+      {{form}}        
+      {%if request.GET.next %}
+      <input type="hidden" name="next" value="{{request.GET.next}}">
+      {%endif%}<br><br>  
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form></p>   
+  </div>
+</div>
+</div>
+{%endblock%}

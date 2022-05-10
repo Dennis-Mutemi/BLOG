@@ -1,0 +1,20 @@
+{% extends 'base_file.html' %}
+{%block content%}
+<div class="container" style="width:35%;margin-top: 2em;">
+    <div class="card" style="width: 23rem;">
+        <div class="card-body">
+          <h5 class="card-title">SIGNUP</h5>          
+          <p class="card-text">
+            <form action="{%url 'accounts:signup'%}" method="post">
+            {%csrf_token%}
+            {{form}}
+            <br>
+            <input type="submit" value="Signup">
+           </form>
+        </p>
+          
+        </div>
+      </div>
+
+</div>
+{%endblock%}

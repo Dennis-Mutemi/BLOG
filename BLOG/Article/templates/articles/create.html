@@ -1,0 +1,21 @@
+{% extends 'base_file.html' %}
+
+{%block content%}
+<div class="container" style="width:35%;margin-top: 2em;">
+    <!-- Content here -->
+    <div class="card p-2" style="width: 30rem;">
+      <div class="card-body">
+        <h5 class="card-title">POST AN ARTICLE</h5>        
+        <p class="card-text">
+          <form action="{% url 'article:create_post' %}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            {{form}}<br><br>
+            <input type="submit" value="Submit">
+          </form>
+        </p>     
+      </div>
+    </div>
+ 
+
+</div>
+{%endblock%}
